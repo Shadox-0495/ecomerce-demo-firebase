@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --btn-img-tamaño: clamp(1.5rem, 2rem, 2.5rem);
+  --espacio-fila: 1rem;
+  --espacio-columna: 1rem;
+  --frm-color-fondo: #eeeeee;
+  --frm-dft-largo: clamp(400px, 2.75rem, 4rem);
+  --radio-borde: 0.5rem;
+  --dft-padding: 1rem 0.75rem;
+  --dft-margin: 0.5rem;
+  --dft-borde: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --dft--tamaño-fuente: clamp(0.9rem, 0.95rem, 1rem);
+  --pantalla-menu-bg: rgb(74, 193, 226);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.frm-session-contenedor {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.frm-session,
+.frm-session .session-datos {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--espacio-fila);
+}
+
+.frm-session {
+  width: var(--frm-dft-largo);
+  background-color: var(--frm-color-fondo);
+  border: var(--dft-borde);
+  border-radius: var(--radio-borde);
+  padding: var(--dft-padding);
+  margin: var(--dft-margin);
+}
+
+.frm-session > h2 {
+  align-self: center;
+  margin: 0px;
+}
+
+/*.frm-session button img {
+  height: auto;
+  width: var(--btn-img-tamaño);
+}
+.frm-session button > span {
+  column-gap: calc(var(--espacio-columna) / 2);
+}*/
+
+.frm-session .session-alt > button {
+  width: 100%;
+}
+
+.frm-session .session-alt #btnLoginGoogle {
+  background-color: #f3f3f3;
+  color: #000;
+}
+
+.frm-session [data-opcion] {
+  align-self: center;
+}
+
+.pantalla-menu {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pantalla-menu-bg);
+}
+
+.pantalla-menu > .menu-contenido {
+  overflow-y: auto;
+  border-radius: calc(var(--radio-borde) + 0.5rem)
+    calc(var(--radio-borde) + 0.5rem) 0 0;
+  background-color: var(--frm-color-fondo);
+  padding: 1rem 0.75rem;
+}
+
+.menu-categorias {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: var(--espacio-fila);
+  column-gap: var(--espacio-columna);
+}
+
+.menu-categorias > li {
+  position: relative;
+  padding: 0.5rem;
+  height: clamp(3rem, 4rem, 5rem);
+  border-radius: var(--radio-borde);
+  background: linear-gradient(
+    45deg,
+    rgb(131, 209, 226) 17%,
+    rgb(130, 218, 240) 100%
+  );
+  border: var(--dft-borde);
+  border-width: 0.15rem;
+  border-color: #e3e3e3;
+}
+
+.menu-categorias label {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.menu-categorias img {
+  width: clamp(2rem, 3rem, 4rem);
+  height: auto;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: calc(var(--radio-borde) + 0.5rem);
+}
+
+.cel-navegacion {
+  --dft-borde: rgba(0, 0, 0, 0.5);
+  position: unset;
+  width: 100%;
+  bottom: 0px;
+  border-top: 0.1rem solid var(--dft-borde);
+}
+
+.top-navegacion {
+  position: unset !important;
+  background-color: var(--pantalla-menu-bg) !important;
+  box-shadow: unset !important;
+}
+
+.top-navegacion .usuario-img > a img,
+.top-navegacion .usuario-img > a svg {
+  height: auto;
+  max-width: 1.75rem;
+  border-radius: 50%;
+  border: var(--dft-borde);
+  border-width: 0.15rem;
+  border-color: #e3e3e3;
+  padding: 0.1rem;
+}
+
+.frm-perfil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: var(--espacio-fila);
+}
+
+.frm-perfil > * {
+  width: 100%;
+}
+
+.entrega-ubicacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: calc(var(--espacio-fila) / 2);
+}
+
+.entrega-ubicacion .ubicacion-origen,
+.entrega-ubicacion .ubicacion-destino {
+  display: flex;
+  flex-direction: row;
+  column-gap: calc(var(--espacio-columna) / 2);
+}
+
+.entrega-ubicacion .ubicacion-origen button,
+.entrega-ubicacion .ubicacion-destino button {
+  padding: 0px;
+}
+
+/*.frm-session .session-opciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--dft--tamaño-fuente);
+}
+
+.frm-session .session-recordar {
+  display: flex;
+  align-items: center;
+}
+
+.session-recordar > span {
+  --dft-padding: 0.25rem;
+  padding: var(--dft-padding);
+}*/
