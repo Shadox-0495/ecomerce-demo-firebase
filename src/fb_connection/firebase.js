@@ -16,16 +16,6 @@ export const loginProviders={
   Google: new firebase.auth.GoogleAuthProvider()
 }
 
-/*const app = firebase.initializeApp({
-  apiKey: "AIzaSyABgGSGac0U8MWMhU8aWk1VDb0jlPAY424",
-  authDomain: "entregas-demo.firebaseapp.com",
-  projectId: "entregas-demo",
-  storageBucket: "entregas-demo.appspot.com",
-  messagingSenderId: "544684579999",
-  appId: "1:544684579999:web:95bdaf5caedbfbe5af16aa",
-  measurementId: "G-3QXT52WJBC"
-});*/
-
 export const firestore = app.firestore();
 export const auth = app.auth();
 export default app;
